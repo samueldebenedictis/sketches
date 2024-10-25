@@ -5,4 +5,4 @@ new:
 	cp ./template-ts/sketch.ts ./sketches/${NAME}.ts
 
 build:
-	npx canvas-sketch sketches/${NAME}.ts --build --dir "./out/${NAME}" -- -p [ tsify --noImplicitAny ]
+	npx canvas-sketch sketches/${NAME}.ts --build --inline --dir "./out/${NAME}" -- -p [ tsify --noImplicitAny ]
