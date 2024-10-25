@@ -6,3 +6,6 @@ new:
 
 build:
 	npx canvas-sketch sketches/${NAME}.ts --build --inline --dir "./out/${NAME}" -- -p [ tsify --noImplicitAny ]
+
+check:
+	npx @biomejs/biome check --write .
