@@ -41,4 +41,4 @@ const sketch = () => {
 	};
 };
 
-canvasSketch(sketch, settings);
+export default canvasSketch(sketch, settings);
