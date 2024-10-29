@@ -17,17 +17,6 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       </Head>
       <Box position="relative" overflow="hidden">
         <Box position="absolute" boxSize="20vw" top={5} right={0}></Box>
-        {/* <Box
-          position="absolute"
-          boxSize="20vw"
-          bottom={0}
-          right={0}
-          transform="translate(5vw, 4vw)"
-          backgroundImage="/asterisk.svg"
-          backgroundRepeat="no-repeat"
-          objectFit="contain"
-          zIndex="hide"
-        /> */}
         <Flex as="main" direction="column" minH="100vh">
           {children}
         </Flex>
