@@ -12,14 +12,6 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
   const fuse = new Fuse(sketches, { includeScore: true });
   const filteredSketches = fuse.search(value);
 
-  const focusStyles: SystemStyleObject = {
-    // border: '2px solid',
-    // borderRadius: 8,
-    // borderColor: 'gray.100',
-    // py: 1,
-    // px: 3,
-  };
-
   return (
     <>
       <Input mb={4} borderColor={'gray.500'} value={value} onChange={e => setValue(e.target.value)} />
@@ -27,8 +19,8 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
         {value !== ''
           ? filteredSketches.map(({ item }, i) => {
               return (
-                <ListItem key={item + i} fontSize="2xl">
-                  <Link href={`/sketches/${item}`} _focus={focusStyles}>
+                <ListItem key={item + i}>
+                  <Link href={`/sketches/${item}`}>
                     {item.replaceAll('-', ' ')}
                   </Link>
                 </ListItem>
@@ -37,7 +29,7 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
           : sketches.map((sketch, i) => {
               return (
                 <ListItem key={sketch + i} fontSize="2xl">
-                  <Link href={`/sketches/${sketch}`} _focus={focusStyles}>
+                  <Link href={`/sketches/${sketch}`}>
                     {sketch.replaceAll('-', ' ')}
                   </Link>
                 </ListItem>
