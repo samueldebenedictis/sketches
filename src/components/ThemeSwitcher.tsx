@@ -1,25 +1,28 @@
-import { Box, IconButton } from "@chakra-ui/react";
-import { useColorMode } from '@chakra-ui/react';
+import { IconButton } from '@chakra-ui/react'
+import { useColorMode } from '@chakra-ui/react'
 import { FaMoon, FaSun } from 'react-icons/fa'
 
 const ThemeSwitcher = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <>
-      {colorMode === "dark" ?
+      {colorMode === 'dark' ? (
         <IconButton
           aria-label="dark"
           bg="transparent"
-          icon={<FaSun />}fontSize="20px"
+          icon={<FaSun />}
+          fontSize="20px"
           onClick={toggleColorMode}
         />
-        : <IconButton
+      ) : (
+        <IconButton
           aria-label="light"
           bg="transparent"
           onClick={toggleColorMode}
-          icon={<FaMoon />}fontSize="20px"
+          icon={<FaMoon />}
+          fontSize="20px"
         />
-      }
+      )}
     </>
   )
 }

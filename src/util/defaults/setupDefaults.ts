@@ -32,8 +32,8 @@ const setupDefaults = ({
   const usedHeight = dimensions
     ? dimensions[1]
     : height
-    ? height
-    : p5.windowHeight
+      ? height
+      : p5.windowHeight
   const aspectRatio = usedWidth / usedHeight
   const windowRatio = p5.windowWidth / p5.windowHeight
   const paddingWidth = padding && padding.length > 0 ? padding[0] * 2 : 0
@@ -41,8 +41,8 @@ const setupDefaults = ({
     padding && padding.length === 2
       ? padding[1] * 2
       : padding && padding.length === 1
-      ? padding[0] * 2
-      : 0
+        ? padding[0] * 2
+        : 0
   const maxWidth = Math.round(p5.windowWidth - paddingWidth)
   const maxHeight = Math.round(p5.windowHeight - paddingHeight)
 

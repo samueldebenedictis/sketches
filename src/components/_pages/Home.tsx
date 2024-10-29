@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading } from '@chakra-ui/react'
+import { Container, Flex, Heading } from '@chakra-ui/react'
 import FuseSearch from 'components/FuseSearch'
 import ThemeSwitcher from 'components/ThemeSwitcher'
 import React, { FC } from 'react'

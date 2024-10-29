@@ -8,8 +8,8 @@ const useGetOs = () => {
       const osString = userAgent.includes('Mac')
         ? 'mac'
         : userAgent.includes('Win')
-        ? 'win'
-        : ''
+          ? 'win'
+          : ''
       setOs(osString)
     }
   }, [os])
