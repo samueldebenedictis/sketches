@@ -1,4 +1,4 @@
-import { CSSObject, Input, InputProps, List, ListItem } from '@chakra-ui/react'
+import { CSSObject, Input, InputProps, List, ListItem, SystemStyleObject } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/react'
 import Fuse from 'fuse.js'
 import React, { FC, useState } from 'react'
@@ -12,12 +12,12 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
   const fuse = new Fuse(sketches, { includeScore: true })
   const filteredSketches = fuse.search(value)
 
-  const focusStyles: CSSObject = {
-    border: '2px solid',
-    borderRadius: 8,
-    borderColor: 'gray.100',
-    py: 1,
-    px: 3,
+  const focusStyles: SystemStyleObject = {
+    // border: '2px solid',
+    // borderRadius: 8,
+    // borderColor: 'gray.100',
+    // py: 1,
+    // px: 3,
   }
 
   return (
