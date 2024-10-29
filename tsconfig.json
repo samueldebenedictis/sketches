@@ -1,5 +1,8 @@
 {
-  "compilerOptions": {
-    "lib": ["ES6", "DOM"]
-  }
+	"compilerOptions": {
+		"lib": ["ES6", "DOM"],
+		"target": "ES6",
+		"noEmit": true,
+		"allowImportingTsExtensions": true
+	}
 }
