@@ -15,7 +15,7 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
   const focusStyles: CSSObject = {
     border: '2px solid',
     borderRadius: 8,
-    borderColor: 'red.100',
+    borderColor: 'gray.100',
     py: 1,
     px: 3,
   }

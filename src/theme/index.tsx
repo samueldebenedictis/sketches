@@ -2,16 +2,16 @@ import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
   fonts: {
-    heading: "'IBM Plex Mono', 'monospace'",
-    body: "'IBM Plex Mono', 'monospace'",
+    heading: "'Roboto', 'monospace'",
+    body: "'Roboto', 'monospace'",
   },
   shadows: {
-    outline: '0 0 0 3px red.100',
+    outline: '0 0 0 3px gray.100',
   },
   components: {
     Input: {
       defaultProps: {
-        focusBorderColor: 'red.100',
+        focusBorderColor: 'gray.100',
       },
     },
   },
