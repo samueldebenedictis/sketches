@@ -1,26 +1,31 @@
+CMD="npx canvas-sketch-cli"
+TEMPLATE="--html src/template/index.html"
+TSIFY="-- -p [ tsify --noImplicitAny ]"
 # TYPESCRIPT
 
 new-ts:
 	cp ./src/template-ts/sketch.ts ./src/sketches/${NAME}.ts
 
 open-ts:
-	npx canvas-sketch-cli src/sketches/${NAME}.ts --open --html src/template/index.html -- -p [ tsify --noImplicitAny ]
-	# npx canvas-sketch-cli src/sketches/${NAME}.ts --open --html src/template/index.html -- -p [ tsify --noImplicitAny ]
+	${CMD} src/sketches/${NAME}.ts --open ${TEMPLATE} ${TSIFY}
+	# ${CMD} src/sketches/${NAME}.ts --open ${TEMPLATE} ${TSIFY}
 
 build-ts:
-	npx canvas-sketch-cli src/sketches/${NAME}.ts --build --dir "./dist/${NAME}" -- -p [ tsify --noImplicitAny ]
-	# npx canvas-sketch-cli src/sketches/${NAME}.ts --build --inline --dir "./dist/${NAME}" -- -p [ tsify --noImplicitAny ]
+	${CMD} src/sketches/${NAME}.ts --build ${TEMPLATE} --dir "./dist/${NAME}" ${TSIFY}
+	# ${CMD} src/sketches/${NAME}.ts --build ${TEMPLATE} --inline --dir "./dist/${NAME}" ${TSIFY}
 
 # JAVASCRIPT
 
 new:
-	npx canvas-sketch-cli src/sketches/${NAME}.js --new --html src/template/index.html
+	${CMD} src/sketches/${NAME}.js --new ${TEMPLATE}
 
 open:
-	npx canvas-sketch-cli src/sketches/${NAME}.js --open --html src/template/index.html
+	${CMD} src/sketches/${NAME}.js --open ${TEMPLATE}
 
 build:
-	npx canvas-sketch-cli src/sketches/${NAME}.ts --build --dir "./dist/${NAME}"
+	${CMD} src/sketches/${NAME}.js --build ${TEMPLATE} --dir "./dist/${NAME}"
+
+# UTILS
 
 check:
 	npx @biomejs/biome check --write .
