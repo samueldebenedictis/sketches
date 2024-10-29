@@ -10,7 +10,7 @@ const HomePage: FC<HomePageTypes> = ({ data }) => {
   return (
     <Container pt={4} maxW="container.lg">
       <Flex justify={'space-between'}>
-        <Heading pb={4}>p5 Playground</Heading>
+        <Heading pb={4}>samuel</Heading>
         <ThemeSwitcher />
       </Flex>
       <FuseSearch sketches={sketches} />

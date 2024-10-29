@@ -5,17 +5,15 @@ const theme = extendTheme({
   styles: {
     global: (props: any) => ({
       'html, body': {
-        background: mode('gray.200', 'gray.800')(props), //mode(light mode color, dark mode color)
+        // mode(light mode color, dark mode color)
+        background: mode('gray.200', 'gray.800')(props),
         color: mode('gray.800', 'gray.200')(props),
       },
     }),
   },
   fonts: {
-    heading: "'Roboto', 'monospace'",
-    body: "'Roboto', 'monospace'",
-  },
-  shadows: {
-    outline: '0 0 0 0 gray.100',
+    heading: "'Poppins', 'monospace'",
+    body: "'Poppins', 'monospace'",
   },
   components: {
     Input: {

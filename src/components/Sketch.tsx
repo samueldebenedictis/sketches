@@ -1,5 +1,5 @@
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
 
-const Sketch = dynamic(() => import('@react-p5/sketch'), { ssr: false });
+const Sketch = dynamic(() => import('@react-p5/sketch'), { ssr: false })
 
-export default Sketch;
+export default Sketch
