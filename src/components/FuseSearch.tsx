@@ -1,22 +1,16 @@
-import {
-  Input,
-  InputProps,
-  List,
-  ListItem,
-  SystemStyleObject,
-} from '@chakra-ui/react'
-import { Link } from '@chakra-ui/react'
-import Fuse from 'fuse.js'
-import React, { FC, useState } from 'react'
+import { Input, InputProps, List, ListItem, SystemStyleObject } from '@chakra-ui/react';
+import { Link } from '@chakra-ui/react';
+import Fuse from 'fuse.js';
+import React, { FC, useState } from 'react';
 
 export interface FuseSearchProps extends InputProps {
-  sketches: string[]
+  sketches: string[];
 }
 
 const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
-  const [value, setValue] = useState<string>('')
-  const fuse = new Fuse(sketches, { includeScore: true })
-  const filteredSketches = fuse.search(value)
+  const [value, setValue] = useState<string>('');
+  const fuse = new Fuse(sketches, { includeScore: true });
+  const filteredSketches = fuse.search(value);
 
   const focusStyles: SystemStyleObject = {
     // border: '2px solid',
@@ -24,16 +18,11 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
     // borderColor: 'gray.100',
     // py: 1,
     // px: 3,
-  }
+  };
 
   return (
     <>
-      <Input
-        mb={4}
-        borderColor={'gray.500'}
-        value={value}
-        onChange={e => setValue(e.target.value)}
-      />
+      <Input mb={4} borderColor={'gray.500'} value={value} onChange={e => setValue(e.target.value)} />
       <List>
         {value !== ''
           ? filteredSketches.map(({ item }, i) => {
@@ -43,7 +32,7 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
                     {item.replaceAll('-', ' ')}
                   </Link>
                 </ListItem>
-              )
+              );
             })
           : sketches.map((sketch, i) => {
               return (
@@ -52,11 +41,11 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
                     {sketch.replaceAll('-', ' ')}
                   </Link>
                 </ListItem>
-              )
+              );
             })}
       </List>
     </>
-  )
-}
+  );
+};
 
-export default FuseSearch
+export default FuseSearch;

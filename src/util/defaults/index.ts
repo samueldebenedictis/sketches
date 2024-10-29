@@ -1,5 +1,5 @@
-import keyPressedDefaults from './keyPressedDefaults'
-import setupDefaults from './setupDefaults'
-import windowResizedDefaults from './windowResizedDefaults'
+import keyPressedDefaults from './keyPressedDefaults';
+import setupDefaults from './setupDefaults';
+import windowResizedDefaults from './windowResizedDefaults';
 
-export { keyPressedDefaults, setupDefaults, windowResizedDefaults }
+export { keyPressedDefaults, setupDefaults, windowResizedDefaults };

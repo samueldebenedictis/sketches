@@ -1,1 +1,1 @@
-declare module 'p5.js-svg'
+declare module 'p5.js-svg';
