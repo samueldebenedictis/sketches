@@ -8,18 +8,15 @@ const dimensions: number[] = [width, height];
 const padding: number[] = [40];
 const background: ColorValue = [255, 253, 252];
 
-
 const preload: P5Function = p5 => {};
 
-const setup: Setup = p5 => {
-  
-};
+const setup: Setup = p5 => {};
 
 const draw: Draw = p5 => {
-  p5.background(255)
-  const fc = p5.frameCount
-  p5.fill(125)
-  p5.circle(fc,fc,30)
+  p5.background(255);
+  const fc = p5.frameCount;
+  p5.fill(125);
+  p5.circle(fc, fc, 30);
 };
 
 const BackgroundImages: NextPage = () => (
