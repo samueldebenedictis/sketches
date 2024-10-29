@@ -16,9 +16,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <link rel="icon" type="image/icon" href="/favicon.svg" />
       </Head>
       <Box position="relative" overflow="hidden">
-        <Box position="absolute" boxSize="20vw" top={5} right={0}>
-          
-        </Box>
+        <Box position="absolute" boxSize="20vw" top={5} right={0}></Box>
         {/* <Box
           position="absolute"
           boxSize="20vw"

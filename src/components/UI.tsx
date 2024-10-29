@@ -29,46 +29,46 @@ export interface UIProps {
 const UI: FC<UIProps> = ({ values }) => {
   return (
     <Accordion
-      position='absolute'
-      maxW='max-content'
+      position="absolute"
+      maxW="max-content"
       mt={6}
       ml={6}
       p={3}
-      bg='white'
+      bg="white"
       borderRadius={8}
       borderWidth={1}
-      borderColor='gray.100'
-      boxShadow='md'
+      borderColor="gray.100"
+      boxShadow="md"
       allowToggle
-      transition='opacity 200ms ease-out'
+      transition="opacity 200ms ease-out"
     >
-      <AccordionItem border='none'>
+      <AccordionItem border="none">
         <AccordionButton>
-          <Box flex={1} textAlign='left'>
+          <Box flex={1} textAlign="left">
             UI
           </Box>
           <AccordionIcon />
         </AccordionButton>
         <AccordionPanel>
-          <VStack align='stretch' spacing={6}>
+          <VStack align="stretch" spacing={6}>
             {values.map((v, i) => {
               const { label, value, setValue, max } = v
 
               return (
-                <VStack key={i} align='flex-start'>
+                <VStack key={i} align="flex-start">
                   <HStack>
-                    <Text whiteSpace='nowrap'>{label}:</Text>
+                    <Text whiteSpace="nowrap">{label}:</Text>
                     <Input
-                      type='number'
+                      type="number"
                       value={value}
                       onChange={e => setValue(parseInt(e.target.value))}
                       maxW={`${Math.floor(value.toString().length * 2)}ch`}
                       p={0}
-                      textAlign='center'
+                      textAlign="center"
                     />
                   </HStack>
                   <Slider
-                    colorScheme='red'
+                    colorScheme="red"
                     focusThumbOnChange={false}
                     defaultValue={value}
                     value={value}
