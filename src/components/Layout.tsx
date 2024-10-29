@@ -13,7 +13,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <>
       <Head>
         <title>Samuel</title>
-        <link rel="icon" type="image/icon" href="/favicon.svg" />
+        <link rel="icon" type="image/icon" href="/favicon.ico" />
       </Head>
       <Box position="relative" overflow="hidden">
         <Box position="absolute" boxSize="20vw" top={5} right={0}></Box>
