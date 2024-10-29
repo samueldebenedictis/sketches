@@ -13,18 +13,18 @@ import {
   SliderTrack,
   Text,
   VStack,
-} from '@chakra-ui/react'
-import { Dispatch, FC, SetStateAction } from 'react'
+} from '@chakra-ui/react';
+import { Dispatch, FC, SetStateAction } from 'react';
 
 export interface UIValue {
-  label: string
-  value: number
-  setValue: Dispatch<SetStateAction<number>>
-  max?: number
+  label: string;
+  value: number;
+  setValue: Dispatch<SetStateAction<number>>;
+  max?: number;
 }
 
 export interface UIProps {
-  values: UIValue[]
+  values: UIValue[];
 }
 const UI: FC<UIProps> = ({ values }) => {
   return (
@@ -52,7 +52,7 @@ const UI: FC<UIProps> = ({ values }) => {
         <AccordionPanel>
           <VStack align="stretch" spacing={6}>
             {values.map((v, i) => {
-              const { label, value, setValue, max } = v
+              const { label, value, setValue, max } = v;
 
               return (
                 <VStack key={i} align="flex-start">
@@ -81,13 +81,13 @@ const UI: FC<UIProps> = ({ values }) => {
                     <SliderThumb />
                   </Slider>
                 </VStack>
-              )
+              );
             })}
           </VStack>
         </AccordionPanel>
       </AccordionItem>
     </Accordion>
-  )
-}
+  );
+};
 
-export default UI
+export default UI;

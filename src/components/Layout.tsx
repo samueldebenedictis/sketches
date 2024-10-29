@@ -1,11 +1,11 @@
-import { Box, Flex } from '@chakra-ui/react'
-import Head from 'next/head'
-import { FC, ReactElement } from 'react'
+import { Box, Flex } from '@chakra-ui/react';
+import Head from 'next/head';
+import { FC, ReactElement } from 'react';
 
-import ThemeSwitcher from './ThemeSwitcher'
+import ThemeSwitcher from './ThemeSwitcher';
 
 export interface LayoutProps {
-  children?: ReactElement
+  children?: ReactElement;
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
@@ -33,7 +33,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         </Flex>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

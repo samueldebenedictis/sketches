@@ -1,7 +1,7 @@
-export type PaperSize = 'A0' | 'A1' | 'A2' | 'A3' | 'A4'
+export type PaperSize = 'A0' | 'A1' | 'A2' | 'A3' | 'A4';
 
 export interface PaperSizes {
-  [key: string]: number[]
+  [key: string]: number[];
 }
 
 // Sizes are for 96 DPI
@@ -15,6 +15,6 @@ const paperSizes: PaperSizes = {
   A3: [1123, 1587],
 
   A4: [794, 1123],
-}
+};
 
-export const getDimensions = (paperSize: PaperSize) => paperSizes[paperSize]
+export const getDimensions = (paperSize: PaperSize) => paperSizes[paperSize];
