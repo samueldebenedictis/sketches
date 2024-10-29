@@ -1,4 +1,10 @@
-import { CSSObject, Input, InputProps, List, ListItem, SystemStyleObject } from '@chakra-ui/react'
+import {
+  Input,
+  InputProps,
+  List,
+  ListItem,
+  SystemStyleObject,
+} from '@chakra-ui/react'
 import { Link } from '@chakra-ui/react'
 import Fuse from 'fuse.js'
 import React, { FC, useState } from 'react'
@@ -24,7 +30,7 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
     <>
       <Input
         mb={4}
-        borderColor='black'
+        borderColor={'gray.500'}
         value={value}
         onChange={e => setValue(e.target.value)}
       />
@@ -32,7 +38,7 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
         {value !== ''
           ? filteredSketches.map(({ item }, i) => {
               return (
-                <ListItem key={item + i} fontSize='2xl'>
+                <ListItem key={item + i} fontSize="2xl">
                   <Link href={`/sketches/${item}`} _focus={focusStyles}>
                     {item.replaceAll('-', ' ')}
                   </Link>
@@ -41,7 +47,7 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
             })
           : sketches.map((sketch, i) => {
               return (
-                <ListItem key={sketch + i} fontSize='2xl'>
+                <ListItem key={sketch + i} fontSize="2xl">
                   <Link href={`/sketches/${sketch}`} _focus={focusStyles}>
                     {sketch.replaceAll('-', ' ')}
                   </Link>

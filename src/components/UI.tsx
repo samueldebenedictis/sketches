@@ -37,7 +37,7 @@ const UI: FC<UIProps> = ({ values }) => {
       bg='white'
       borderRadius={8}
       borderWidth={1}
-      borderColor='gray.200'
+      borderColor='gray.100'
       boxShadow='md'
       allowToggle
       transition='opacity 200ms ease-out'
