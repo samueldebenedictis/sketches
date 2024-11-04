@@ -3,18 +3,7 @@ import { useEffect, useId } from 'react';
 
 type SketchCleanup = { cleanup: () => void };
 
-const visualisation = ({ width, height }: { width: number, height: number }): SketchCleanup => {
-  const sketch = (p5: P5) => {
-    p5.setup = () => {
-      p5.createCanvas(window.innerWidth, height);
-    };
-    p5.draw = () => {
-      p5.background('red')
-      p5.line(0, 0, width, height);
-      p5.line(50, 50, width, height);
-    };
-  };
-
+const visualisation = ({ sketch }: { sketch: (p5: P5) => void }): SketchCleanup => {
   const p5 = new P5(sketch);
 
   return {
@@ -22,19 +11,18 @@ const visualisation = ({ width, height }: { width: number, height: number }): Sk
   };
 };
 
-export const WorkingDemonstration = ({ width, height }: { width: number, height: number }) => {
+export const WorkingDemonstration = ({ sketch }: { sketch: (p5: P5) => void }) => {
   const id = useId();
 
   useEffect(() => {
     const { cleanup } = visualisation({
-        width,
-      height,
+      sketch,
     });
 
     return cleanup; // This removes the canvas when the component is rerendered.
-    });
+  });
 
   return <div id={id}></div>;
 };
 
-export default WorkingDemonstration
+export default WorkingDemonstration;
