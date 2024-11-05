@@ -1,4 +1,4 @@
-import { DynCanvas } from 'components/DynCanvas';
+import { DynCanvas } from 'components/canvas/DynCanvas';
 import { NextPage } from 'next';
 import p5 from 'p5';
 

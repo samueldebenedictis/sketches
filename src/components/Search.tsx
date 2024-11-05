@@ -1,18 +1,18 @@
 import Fuse from 'fuse.js';
 import React, { FC, useState } from 'react';
 
-export interface FuseSearchProps extends InputProps {
+export interface FuseSearchProps {
   sketches: string[];
 }
 
-const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
+const Search: FC<FuseSearchProps> = ({ sketches }) => {
   const [value, setValue] = useState<string>('');
   const fuse = new Fuse(sketches, { includeScore: true });
   const filteredSketches = fuse.search(value);
 
   return (
     <>
-      <input mb={4} borderColor={'gray.500'} value={value} onChange={e => setValue(e.target.value)} />
+      <input value={value} onChange={e => setValue(e.target.value)} className='border-red-500 border-solid border-4 w-full'/>
       <ul>
         {value !== ''
           ? filteredSketches.map(({ item }, i) => {
@@ -24,7 +24,7 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
             })
           : sketches.map((sketch, i) => {
               return (
-                <li key={sketch + i} fontSize="2xl">
+                <li key={sketch + i}>
                   <a href={`/sketches/${sketch}`}>{sketch.replaceAll('-', ' ')}</a>
                 </li>
               );
@@ -34,4 +34,4 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
   );
 };
 
-export default FuseSearch;
+export default Search;
