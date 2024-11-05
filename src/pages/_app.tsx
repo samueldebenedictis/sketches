@@ -1,6 +1,7 @@
 import Layout from 'components/Layout';
 import type { AppProps } from 'next/app';
-import theme from 'theme/index';
+
+import "../../globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

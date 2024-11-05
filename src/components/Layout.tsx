@@ -12,9 +12,8 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <title>Samuel</title>
         <link rel="icon" type="image/icon" href="/favicon.ico" />
       </Head>
-      <div className="relative">
-        <div className="absolute" divSize="20vw"></div>
-        <div as="main" direction="column" minH="100vh">
+      <div>
+        <div>
           {children}
         </div>
       </div>
