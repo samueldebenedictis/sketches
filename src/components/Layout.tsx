@@ -12,11 +12,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <title>Samuel</title>
         <link rel="icon" type="image/icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <div>
-          {children}
-        </div>
-      </div>
+      <div>{children}</div>
     </>
   );
 };
