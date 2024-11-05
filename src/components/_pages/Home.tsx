@@ -1,6 +1,4 @@
-import { Container, Flex, Heading } from '@chakra-ui/react';
 import FuseSearch from 'components/FuseSearch';
-import ThemeSwitcher from 'components/ThemeSwitcher';
 import React, { FC } from 'react';
 import { HomePageTypes } from 'types/Pages';
 
@@ -8,13 +6,12 @@ const HomePage: FC<HomePageTypes> = ({ data }) => {
   const { sketches } = data;
 
   return (
-    <Container pt={4} maxW="container.lg">
-      <Flex justify={'space-between'}>
-        <Heading pb={4}>samuel</Heading>
-        <ThemeSwitcher />
-      </Flex>
+    <div className=''>
+      <div>
+        <h1 pb={4}>samuel</h1>
+      </div>
       <FuseSearch sketches={sketches} />
-    </Container>
+    </div>
   );
 };
 

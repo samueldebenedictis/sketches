@@ -1,5 +1,3 @@
-import { Input, InputProps, List, ListItem, SystemStyleObject } from '@chakra-ui/react';
-import { Link } from '@chakra-ui/react';
 import Fuse from 'fuse.js';
 import React, { FC, useState } from 'react';
 
@@ -14,24 +12,24 @@ const FuseSearch: FC<FuseSearchProps> = ({ sketches }) => {
 
   return (
     <>
-      <Input mb={4} borderColor={'gray.500'} value={value} onChange={e => setValue(e.target.value)} />
-      <List>
+      <input mb={4} borderColor={'gray.500'} value={value} onChange={e => setValue(e.target.value)} />
+      <ul>
         {value !== ''
           ? filteredSketches.map(({ item }, i) => {
               return (
-                <ListItem key={item + i}>
-                  <Link href={`/sketches/${item}`}>{item.replaceAll('-', ' ')}</Link>
-                </ListItem>
+                <li key={item + i}>
+                  <a href={`/sketches/${item}`}>{item.replaceAll('-', ' ')}</a>
+                </li>
               );
             })
           : sketches.map((sketch, i) => {
               return (
-                <ListItem key={sketch + i} fontSize="2xl">
-                  <Link href={`/sketches/${sketch}`}>{sketch.replaceAll('-', ' ')}</Link>
-                </ListItem>
+                <li key={sketch + i} fontSize="2xl">
+                  <a href={`/sketches/${sketch}`}>{sketch.replaceAll('-', ' ')}</a>
+                </li>
               );
             })}
-      </List>
+      </ul>
     </>
   );
 };
