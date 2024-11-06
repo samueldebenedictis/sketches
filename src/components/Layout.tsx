@@ -8,10 +8,6 @@ export interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <Head>
-        <title>Samuel</title>
-        <link rel="icon" type="image/icon" href="/favicon.ico" />
-      </Head>
       <div>{children}</div>
     </>
   );
