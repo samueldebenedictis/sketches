@@ -16,7 +16,7 @@ const Search: FC<FuseSearchProps> = ({ sketches }) => {
         <input
           value={value}
           onChange={e => setValue(e.target.value)}
-          className="border-gray-500 border-solid border w-full rounded-md h-10"
+          className="border-gray-400 border-solid border w-full rounded-md h-10 focus:border-gray-600 focus:outline-none pl-2"
         />
       </div>
       <div>
