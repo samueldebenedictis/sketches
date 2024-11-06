@@ -11,26 +11,34 @@ const Search: FC<FuseSearchProps> = ({ sketches }) => {
   const filteredSketches = fuse.search(value);
 
   return (
-    <>
-      <input value={value} onChange={e => setValue(e.target.value)} className='border-red-500 border-solid border-4 w-full'/>
-      <ul>
-        {value !== ''
-          ? filteredSketches.map(({ item }, i) => {
-              return (
-                <li key={item + i}>
-                  <a href={`/sketches/${item}`}>{item.replaceAll('-', ' ')}</a>
-                </li>
-              );
-            })
-          : sketches.map((sketch, i) => {
-              return (
-                <li key={sketch + i}>
-                  <a href={`/sketches/${sketch}`}>{sketch.replaceAll('-', ' ')}</a>
-                </li>
-              );
-            })}
-      </ul>
-    </>
+    <div className="pt-4 pb-4 text-lg">
+      <div className="pb-4">
+        <input
+          value={value}
+          onChange={e => setValue(e.target.value)}
+          className="border-gray-500 border-solid border w-full rounded-md h-10"
+        />
+      </div>
+      <div>
+        <ul>
+          {value !== ''
+            ? filteredSketches.map(({ item }, i) => {
+                return (
+                  <li key={item + i}>
+                    <a href={`/sketches/${item}`}>{item.replaceAll('-', ' ')}</a>
+                  </li>
+                );
+              })
+            : sketches.map((sketch, i) => {
+                return (
+                  <li key={sketch + i}>
+                    <a href={`/sketches/${sketch}`}>{sketch.replaceAll('-', ' ')}</a>
+                  </li>
+                );
+              })}
+        </ul>
+      </div>
+    </div>
   );
 };
 

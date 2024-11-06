@@ -20,7 +20,7 @@ class MyDocument extends Document {
           <title>Samuel</title>
           <link rel="icon" type="image/icon" href="/favicon.ico" />
         </Head>
-        <body className="bg-gray-200 dark:bg-gray-700">
+        <body className="bg-gray-200 dark:bg-gray-800 font-poppins text-gray-800 dark:text-gray-200">
           <Main />
           <NextScript />
         </body>

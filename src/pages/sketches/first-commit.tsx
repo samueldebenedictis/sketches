@@ -1,4 +1,4 @@
-import { DynCanvas } from 'components/canvas/DynCanvas';
+import { Canvas } from 'components/canvas/Canvas';
 import { NextPage } from 'next';
 import p5 from 'p5';
 
@@ -56,6 +56,6 @@ const sketch = (p5: p5) => {
   };
 };
 
-const FirstCommit: NextPage = () => <DynCanvas sketch={sketch} />;
+const FirstCommit: NextPage = () => <Canvas sketch={sketch} />;
 
 export default FirstCommit;
