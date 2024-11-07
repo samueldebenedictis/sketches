@@ -11,7 +11,7 @@ const visualisation = ({ sketch }: { sketch: (p5: P5) => void }): SketchCleanup 
   };
 };
 
-export const WorkingDemonstration = ({ sketch }: { sketch: (p5: P5) => void }) => {
+export const Canvas = ({ sketch }: { sketch: (p5: P5) => void }) => {
   const id = useId();
 
   useEffect(() => {
@@ -25,4 +25,4 @@ export const WorkingDemonstration = ({ sketch }: { sketch: (p5: P5) => void }) =
   return <div id={id}></div>;
 };
 
-export default WorkingDemonstration;
+export default Canvas;
