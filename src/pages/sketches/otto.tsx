@@ -19,7 +19,6 @@ const sketch = (p5: p5) => {
       this.t = t;
     }
     draw() {
-      // p5.rect(this.x,this.y,rectDim)
       if (this.t == 0) {
         p5.arc(this.x, this.y, rectDim, rectDim, 0, p5.HALF_PI);
         p5.arc(this.x + rectDim, this.y + rectDim, rectDim, rectDim, p5.PI, p5.HALF_PI * 3);
@@ -32,9 +31,6 @@ const sketch = (p5: p5) => {
         p5.line(this.x + rectDim / 2, this.y, this.x + rectDim / 2, this.y + rectDim);
         p5.line(this.x, this.y + rectDim / 2, this.x + rectDim, this.y + rectDim / 2);
       }
-      // if(Math.random()<0.001) {
-      //   this.t = (this.t+1)%3
-      // }
     }
   }
 
@@ -49,6 +45,7 @@ const sketch = (p5: p5) => {
         rects.push(new SpecialRect(x * rectDim, y * rectDim, Math.floor(p5.random(0, 3))));
       }
     }
+    p5.noLoop()
   };
 
   p5.draw = () => {
