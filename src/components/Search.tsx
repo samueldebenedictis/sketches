@@ -9,7 +9,6 @@ const Search: FC<FuseSearchProps> = ({ sketches }) => {
   const [value, setValue] = useState<string>('');
   const fuse = new Fuse(sketches, { includeScore: true });
   const filteredSketches = fuse.search(value);
-  const basePath = 'sketches'
 
   return (
     <div className="pt-4 pb-4 text-lg">
@@ -26,14 +25,14 @@ const Search: FC<FuseSearchProps> = ({ sketches }) => {
             ? filteredSketches.map(({ item }, i) => {
                 return (
                   <li key={item + i}>
-                    <a href={`${basePath}/s/${item}`}>{item.replaceAll('-', ' ')}</a>
+                    <a href={`/s/${item}`}>{item.replaceAll('-', ' ')}</a>
                   </li>
                 );
               })
             : sketches.map((sketch, i) => {
                 return (
                   <li key={sketch + i}>
-                    <a href={`${basePath}/s/${sketch}`}>{sketch.replaceAll('-', ' ')}</a>
+                    <a href={`/s/${sketch}`}>{sketch.replaceAll('-', ' ')}</a>
                   </li>
                 );
               })}
