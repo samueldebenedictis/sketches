@@ -1,4 +1,5 @@
 import Fuse from 'fuse.js';
+import Link from 'next/link';
 import React, { FC, useState } from 'react';
 
 export interface FuseSearchProps {
@@ -25,14 +26,14 @@ const Search: FC<FuseSearchProps> = ({ sketches }) => {
             ? filteredSketches.map(({ item }, i) => {
                 return (
                   <li key={item + i}>
-                    <a href={`/s/${item}`}>{item.replaceAll('-', ' ')}</a>
+                    <Link href={`/s/${item}`}>{item.replaceAll('-', ' ')}</Link>
                   </li>
                 );
               })
             : sketches.map((sketch, i) => {
                 return (
                   <li key={sketch + i}>
-                    <a href={`/s/${sketch}`}>{sketch.replaceAll('-', ' ')}</a>
+                    <Link href={`/s/${sketch}`}>{sketch.replaceAll('-', ' ')}</Link>
                   </li>
                 );
               })}
