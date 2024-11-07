@@ -11,6 +11,7 @@
     "format": "npx prettier --write ."
   },
   "dependencies": {
+    "eslint-config-next": "^15.0.3",
     "fuse.js": "^6.6.2",
     "next": "15.0.2",
     "p5": "^1.6.0",
