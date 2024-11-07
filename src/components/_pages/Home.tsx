@@ -8,7 +8,6 @@ export interface HomePageProps {
   };
 }
 
-
 const HomePage: FC<HomePageProps> = ({ data }) => {
   const { sketches } = data;
   const [theme, setTheme] = useState('light');

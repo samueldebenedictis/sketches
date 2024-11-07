@@ -2,57 +2,51 @@ import { Canvas } from 'components/canvas/Canvas';
 import { NextPage } from 'next';
 import p5 from 'p5';
 
-const palette = ['#845ec2', '#d65db1', '#ff6f91', '#ff9671', '#ffc75f', '#f9f871'];
-
-const grid = () => {};
-
-function myEasingFunction(t: number) {
-  return t * t * (3 - 2 * t);
-}
-
-function calcScale(p5: p5, t: number, m: number) {
-  const tP = t % m;
-  const a = m / 2;
-  const p = p5.abs(a - tP) + a;
-  const v = p5.lerp(1, 3, myEasingFunction(1 - p / m));
-  return v;
-}
-
 const sketch = (p5: p5) => {
+  const boxes: any[] = [];
+
+  const dim = window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth;
+  const translateX = window.innerWidth > window.innerHeight ? (window.innerWidth - window.innerHeight) / 2 : 0;
+  const translateY = window.innerHeight > window.innerWidth ? (window.innerHeight - window.innerWidth) / 2 : 0;
+  const boxDim = dim / 40;
+  const radius = dim / 2.3;
+
+  const noiseLevel = 255;
+  const noiseScale = 0.02;
+
+  const distance = (x: number, y: number, c: number) => p5.sqrt(p5.pow(c / 2 - x, 2) + p5.pow(c / 2 - y, 2));
+
   p5.preload = () => {};
 
   p5.setup = () => {
     p5.createCanvas(window.innerWidth, window.innerHeight);
-    p5.angleMode('degrees');
+    for (let x = 0; x < dim; x += boxDim) {
+      for (let y = 0; y < dim; y += boxDim) {
+        if (distance(x, y, dim) < radius) {
+          boxes.push({ x, y });
+        }
+      }
+    }
   };
+
   p5.draw = () => {
-    const maxDim = p5.width > p5.height ? p5.width : p5.height;
-    p5.background(255);
-    const fc = p5.frameCount;
-    p5.fill(125);
-    // p5.circle(fc, fc, 30);
+    p5.translate(translateX, translateY);
+    p5.background(p5.color(30, 30, 30));
 
-    const c = p5.lerpColor(p5.color(palette[0]), p5.color(palette[1]), (p5.frameCount % 360) / 360);
-
-    p5.background(c);
-
-    p5.push();
     p5.noStroke();
 
-    p5.translate(200, 200);
-    const s = calcScale(p5, p5.frameCount, 720);
-    const r = p5.lerp(0, 900, myEasingFunction((p5.frameCount % 360) / 360));
-    p5.rotate(r);
-    p5.scale(s);
-    p5.fill(palette[4]);
-    p5.ellipse(40, 0, 70, 50);
-    p5.ellipse(-40, 0, 70, 50);
-    p5.ellipse(0, 40, 50, 70);
-    p5.ellipse(0, -40, 50, 70);
-    p5.fill(palette[3]);
-    p5.circle(0, 0, 50);
+    for (const b of boxes) {
+      const nx = noiseScale * b.x;
+      const ny = noiseScale * b.y;
+      const nt = noiseScale * 1 * p5.frameCount;
 
-    p5.pop();
+      const nn = p5.noise(nx, ny, nt);
+
+      const c = noiseLevel * nn;
+
+      p5.fill(c);
+      p5.circle(b.x, b.y, boxDim * 1.1 * nn);
+    }
   };
 };
 
