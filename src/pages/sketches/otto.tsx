@@ -3,75 +3,69 @@ import { NextPage } from 'next';
 import p5 from 'p5';
 
 const sketch = (p5: p5) => {
+  const canvasDim = window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth;
+  const translateX = window.innerWidth > window.innerHeight ? (window.innerWidth - window.innerHeight) / 2 : 0;
+  const translateY = window.innerHeight > window.innerWidth ? (window.innerHeight - window.innerWidth) / 2 : 0;
+  const max = 10;
+  const border = canvasDim / 10;
+  const rectDim = (canvasDim - border) / max;
+  class SpecialRect {
+    x: number;
+    y: number;
+    t: number;
+    constructor(posX: number, posY: number, t: number) {
+      this.x = posX;
+      this.y = posY;
+      this.t = t;
+    }
+    draw() {
+      // p5.rect(this.x,this.y,rectDim)
+      if (this.t == 0) {
+        p5.arc(this.x, this.y, rectDim, rectDim, 0, p5.HALF_PI);
+        p5.arc(this.x + rectDim, this.y + rectDim, rectDim, rectDim, p5.PI, p5.HALF_PI * 3);
+      }
+      if (this.t == 1) {
+        p5.arc(this.x + rectDim, this.y, rectDim, rectDim, p5.HALF_PI, p5.PI);
+        p5.arc(this.x, this.y + rectDim, rectDim, rectDim, p5.HALF_PI * 3, 0);
+      }
+      if (this.t == 2) {
+        p5.line(this.x + rectDim / 2, this.y, this.x + rectDim / 2, this.y + rectDim);
+        p5.line(this.x, this.y + rectDim / 2, this.x + rectDim, this.y + rectDim / 2);
+      }
+      // if(Math.random()<0.001) {
+      //   this.t = (this.t+1)%3
+      // }
+    }
+  }
+
+  const rects: SpecialRect[] = [];
+
   p5.preload = () => {};
 
   p5.setup = () => {
     p5.createCanvas(window.innerWidth, window.innerHeight);
+    for (let x = 0; x < max; x++) {
+      for (let y = 0; y < max; y++) {
+        rects.push(new SpecialRect(x * rectDim, y * rectDim, Math.floor(p5.random(0, 3))));
+      }
+    }
   };
 
   p5.draw = () => {
+    p5.translate(translateX + border / 2, translateY + border / 2);
     p5.background(p5.color(30, 30, 30));
-    p5.stroke(255);
+    p5.stroke(222);
+    p5.strokeWeight(canvasDim / 100);
     p5.noFill();
-    const dim = 200;
-    p5.rect(p5.width / 2, p5.height / 2, dim, dim);
-    // for (let i = 0; i < 9; i++) {
-    //   if (i == 5 || i == 3) {
-    //     p5.stroke(255, 0, 0);
-    //   } else {
-    //     p5.stroke(255);
-    //     p5.circle(p5.width / 2, p5.height / 2 + (dim / 8) * i, 10);
-    //   }
-    // }
-    const x1 = p5.width / 2;
-    const y1 = p5.height / 2 + (dim / 8) * 5;
 
-    const x4 = p5.width / 2 + (dim / 8) * 5;
-    const y4 = p5.height / 2;
-    p5.circle(x1, y1, 10);
-    p5.circle(x4, y4, 10);
-    const xc = p5.width / 2 ;
-    const yc = p5.height / 2 ;
-
-    p5.circle(xc,yc, 15)
-    p5.strokeWeight(15);
-    p5.strokeCap('round');
-    // p5.curve(
-    //   p5.width / 2 + (-100),
-    //   p5.height / 2 + (-100),
-
-    //   p5.width / 2,
-    //   p5.height / 2 +( (dim / 8) * 5),
-
-    //   p5.width / 2 + ((dim / 8) * 5),
-    //   p5.height / 2,
-
-    //   p5.width / 2 + (-100),
-    //   p5.height / 2 + (-100),
-    // );
-
-
-    const ax = x1 - xc;
-    const ay = y1 - yc;
-    const bx = x4 - xc;
-    const by = y4 - yc;
-    const q1 = ax * ax + ay * ay;
-    const q2 = q1 + ax * bx + ay * by;
-    const k2 = ((4 / 3) * (p5.sqrt(2 * q1 * q2) - q2)) / (ax * by - ay * bx);
-
-    const x2 = xc + ax - k2 * ay;
-    const y2 = yc + ay + k2 * ax;
-    const x3 = xc + bx + k2 * by;
-    const y3 = yc + by - k2 * bx;
-
-    p5.bezier(
-      x1,y1,x2,y2,x3,y3,x4,y4
-    );
-
-    p5.strokeWeight(1);
+    for (const r of rects) {
+      r.draw();
+    }
+    p5.strokeWeight(canvasDim / 80);
+    p5.rect(0, 0, canvasDim-border, canvasDim-border);
   };
 };
 
-const FirstCommit: NextPage = () => <Canvas sketch={sketch} />;
+const Otto: NextPage = () => <Canvas sketch={sketch} />;
 
-export default FirstCommit;
+export default Otto;
