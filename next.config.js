@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   basePath: '/sketches',
-  assetPrefix: '/sketches/'
+  assetPrefix: '/sketches/',
 };
 
 module.exports = nextConfig;

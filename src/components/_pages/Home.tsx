@@ -32,7 +32,7 @@ const HomePage: FC<HomePageProps> = ({ data }) => {
   };
 
   return (
-    <div className='flex justify-center'>
+    <div className="flex justify-center">
       <div className="sm:w-3/4 w-full p-4">
         <div className="text-2xl font-bold justify-between items-center flex">
           <h1>samuel</h1>

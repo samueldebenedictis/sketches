@@ -45,7 +45,7 @@ const sketch = (p5: p5) => {
         rects.push(new SpecialRect(x * rectDim, y * rectDim, Math.floor(p5.random(0, 3))));
       }
     }
-    p5.noLoop()
+    p5.noLoop();
   };
 
   p5.draw = () => {
@@ -59,7 +59,7 @@ const sketch = (p5: p5) => {
       r.draw();
     }
     p5.strokeWeight(canvasDim / 80);
-    p5.rect(0, 0, canvasDim-border, canvasDim-border);
+    p5.rect(0, 0, canvasDim - border, canvasDim - border);
   };
 };
 
