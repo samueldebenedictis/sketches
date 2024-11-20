@@ -26,14 +26,14 @@ const Search: FC<FuseSearchProps> = ({ sketches }) => {
             ? filteredSketches.map(({ item }, i) => {
                 return (
                   <li key={item + i}>
-                    <Link href={`/s/${item}`}>{item.replaceAll('-', ' ')}</Link>
+                    <Link href={`/sketches/${item}`}>{item.replaceAll('-', ' ')}</Link>
                   </li>
                 );
               })
             : sketches.map((sketch, i) => {
                 return (
                   <li key={sketch + i}>
-                    <Link href={`/s/${sketch}`}>{sketch.replaceAll('-', ' ')}</Link>
+                    <Link href={`/sketches/${sketch}`}>{sketch.replaceAll('-', ' ')}</Link>
                   </li>
                 );
               })}
