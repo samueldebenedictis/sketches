@@ -24,7 +24,7 @@ const sketch = (p5: p5) => {
       p5.push();
 
       p5.translate(this.x, this.y);
-      
+
       switch (this.r) {
         case 0:
           // rotate 1/4
