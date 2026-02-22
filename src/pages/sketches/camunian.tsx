@@ -8,7 +8,7 @@ const sketch = (p5: p5) => {
   const canvasDim = window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth;
   const translateX = window.innerWidth > window.innerHeight ? (window.innerWidth - window.innerHeight) / 2 : 0;
   const translateY = window.innerHeight > window.innerWidth ? (window.innerHeight - window.innerWidth) / 2 : 0;
-  const max = 4;
+  const max = 3;
   const border = Math.floor(canvasDim / 10);
   const rectDim = Math.floor((canvasDim - border) / max);
   const dist = Math.floor(rectDim / 4);
@@ -59,86 +59,86 @@ const sketch = (p5: p5) => {
       switch (this.t) {
         // 1,5,9
         case 0: {
-          p5.circle(dist, dist, rectDim / 4);
-          p5.circle(1.5 * dist, 1.5 * dist, rectDim / 4);
-          p5.circle(2 * dist, 2 * dist, rectDim / 4);
-          p5.circle(2.5 * dist, 2.5 * dist, rectDim / 4);
-          p5.circle(3 * dist, 3 * dist, rectDim / 4);
+          p5.circle(dist, dist, dist);
+          p5.circle(1.5 * dist, 1.5 * dist, dist);
+          p5.circle(2 * dist, 2 * dist, dist);
+          p5.circle(2.5 * dist, 2.5 * dist, dist);
+          p5.circle(3 * dist, 3 * dist, dist);
 
           p5.fill(p5.color(30, 30, 30));
-          p5.circle(dist, 2 * dist, rectDim / 4);
-          p5.circle(2 * dist, dist, rectDim / 4);
-          p5.circle(3 * dist, 2 * dist, rectDim / 4);
-          p5.circle(3 * dist, 2 * dist, rectDim / 4);
-          p5.circle(2 * dist, 3 * dist, rectDim / 4);
+          p5.circle(dist, 2 * dist, dist);
+          p5.circle(2 * dist, dist, dist);
+          p5.circle(3 * dist, 2 * dist, dist);
+          p5.circle(3 * dist, 2 * dist, dist);
+          p5.circle(2 * dist, 3 * dist, dist);
 
           break;
         }
         // 1,5
         case 1: {
-          p5.circle(dist, dist, rectDim / 4);
-          p5.circle(1.5 * dist, 1.5 * dist, rectDim / 4);
-          p5.circle(2 * dist, 2 * dist, rectDim / 4);
+          p5.circle(dist, dist, dist);
+          p5.circle(1.5 * dist, 1.5 * dist, dist);
+          p5.circle(2 * dist, 2 * dist, dist);
 
           p5.fill(p5.color(30, 30, 30));
-          p5.circle(dist, 2 * dist, rectDim / 4);
-          p5.circle(2 * dist, dist, rectDim / 4);
+          p5.circle(dist, 2 * dist, dist);
+          p5.circle(2 * dist, dist, dist);
 
           break;
         }
         // 1,5,3
         case 2: {
-          p5.circle(dist, dist, rectDim / 4);
-          p5.circle(1.5 * dist, 1.5 * dist, rectDim / 4);
-          p5.circle(2 * dist, 2 * dist, rectDim / 4);
-          p5.circle(2.5 * dist, 1.5 * dist, rectDim / 4);
-          p5.circle(3 * dist, dist, rectDim / 4);
+          p5.circle(dist, dist, dist);
+          p5.circle(1.5 * dist, 1.5 * dist, dist);
+          p5.circle(2 * dist, 2 * dist, dist);
+          p5.circle(2.5 * dist, 1.5 * dist, dist);
+          p5.circle(3 * dist, dist, dist);
 
           p5.fill(p5.color(30, 30, 30));
-          p5.circle(dist, 2 * dist, rectDim / 4);
-          p5.circle(2 * dist, dist, rectDim / 4);
-          p5.circle(3 * dist, 2 * dist, rectDim / 4);
-          p5.circle(3 * dist, 2 * dist, rectDim / 4);
+          p5.circle(dist, 2 * dist, dist);
+          p5.circle(2 * dist, dist, dist);
+          p5.circle(3 * dist, 2 * dist, dist);
+          p5.circle(3 * dist, 2 * dist, dist);
 
           break;
         }
         // 1,5,7,9
         case 3: {
-          p5.circle(dist, dist, rectDim / 4);
-          p5.circle(1.5 * dist, 1.5 * dist, rectDim / 4);
-          p5.circle(2 * dist, 2 * dist, rectDim / 4);
-          p5.circle(2.5 * dist, 2.5 * dist, rectDim / 4);
-          p5.circle(3 * dist, 3 * dist, rectDim / 4);
-          p5.circle(1.5 * dist, 2.5 * dist, rectDim / 4);
-          p5.circle(dist, 3 * dist, rectDim / 4);
+          p5.circle(dist, dist, dist);
+          p5.circle(1.5 * dist, 1.5 * dist, dist);
+          p5.circle(2 * dist, 2 * dist, dist);
+          p5.circle(2.5 * dist, 2.5 * dist, dist);
+          p5.circle(3 * dist, 3 * dist, dist);
+          p5.circle(1.5 * dist, 2.5 * dist, dist);
+          p5.circle(dist, 3 * dist, dist);
 
           p5.fill(p5.color(30, 30, 30));
-          p5.circle(dist, 2 * dist, rectDim / 4);
-          p5.circle(2 * dist, dist, rectDim / 4);
-          p5.circle(3 * dist, 2 * dist, rectDim / 4);
-          p5.circle(3 * dist, 2 * dist, rectDim / 4);
-          p5.circle(2 * dist, 3 * dist, rectDim / 4);
+          p5.circle(dist, 2 * dist, dist);
+          p5.circle(2 * dist, dist, dist);
+          p5.circle(3 * dist, 2 * dist, dist);
+          p5.circle(3 * dist, 2 * dist, dist);
+          p5.circle(2 * dist, 3 * dist, dist);
 
           break;
         }
         // 1,5,7,9
         case 4: {
-          p5.circle(dist, dist, rectDim / 4);
-          p5.circle(1.5 * dist, 1.5 * dist, rectDim / 4);
-          p5.circle(2 * dist, 2 * dist, rectDim / 4);
-          p5.circle(2.5 * dist, 2.5 * dist, rectDim / 4);
-          p5.circle(3 * dist, 3 * dist, rectDim / 4);
-          p5.circle(1.5 * dist, 2.5 * dist, rectDim / 4);
-          p5.circle(dist, 3 * dist, rectDim / 4);
-          p5.circle(2.5 * dist, 1.5 * dist, rectDim / 4);
-          p5.circle(3 * dist, dist, rectDim / 4);
+          p5.circle(dist, dist, dist);
+          p5.circle(1.5 * dist, 1.5 * dist, dist);
+          p5.circle(2 * dist, 2 * dist, dist);
+          p5.circle(2.5 * dist, 2.5 * dist, dist);
+          p5.circle(3 * dist, 3 * dist, dist);
+          p5.circle(1.5 * dist, 2.5 * dist, dist);
+          p5.circle(dist, 3 * dist, dist);
+          p5.circle(2.5 * dist, 1.5 * dist, dist);
+          p5.circle(3 * dist, dist, dist);
 
           p5.fill(p5.color(30, 30, 30));
-          p5.circle(dist, 2 * dist, rectDim / 4);
-          p5.circle(2 * dist, dist, rectDim / 4);
-          p5.circle(3 * dist, 2 * dist, rectDim / 4);
-          p5.circle(3 * dist, 2 * dist, rectDim / 4);
-          p5.circle(2 * dist, 3 * dist, rectDim / 4);
+          p5.circle(dist, 2 * dist, dist);
+          p5.circle(2 * dist, dist, dist);
+          p5.circle(3 * dist, 2 * dist, dist);
+          p5.circle(3 * dist, 2 * dist, dist);
+          p5.circle(2 * dist, 3 * dist, dist);
 
           break;
         }
