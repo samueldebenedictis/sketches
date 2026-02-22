@@ -2,6 +2,8 @@ import { Canvas } from 'components/canvas/Canvas';
 import { NextPage } from 'next';
 import p5 from 'p5';
 
+export const SKETCH_DATE = '2024-12-20';
+
 const sketch = (p5: p5) => {
   const canvasDim = window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth;
   const translateX = window.innerWidth > window.innerHeight ? (window.innerWidth - window.innerHeight) / 2 : 0;

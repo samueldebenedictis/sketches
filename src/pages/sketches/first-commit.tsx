@@ -2,6 +2,8 @@ import { Canvas } from 'components/canvas/Canvas';
 import { NextPage } from 'next';
 import p5 from 'p5';
 
+export const SKETCH_DATE = '2024-10-29';
+
 const sketch = (p5: p5) => {
   const boxes: any[] = [];
 
