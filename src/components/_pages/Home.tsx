@@ -2,9 +2,14 @@ import Search from 'components/Search';
 import React, { FC, useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
+interface SketchInfo {
+  name: string;
+  date: string;
+}
+
 export interface HomePageProps {
   data: {
-    sketches: string[];
+    sketches: SketchInfo[];
   };
 }
 
