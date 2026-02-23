@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import p5 from 'p5';
 import chroma from 'chroma-js';
 
-export const SKETCH_DATE = '2026-02-20';
+export const SKETCH_DATE = '2026-02-23';
 
 const sketch = (p5: p5) => {
   const randomBetween = (max: number) => Math.floor(p5.random(0, max + 1));
