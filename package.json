@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write ./src"
   },
   "dependencies": {
     "chroma-js": "^3.2.0",
