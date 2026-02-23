@@ -33,17 +33,17 @@ const sketch = (p5: p5) => {
           p5.rotate(p5.HALF_PI);
           p5.translate(0, -rectDim);
           break;
-        case 2:
+        case 1:
           // rotate 2/4
           p5.rotate(p5.PI);
           p5.translate(-rectDim, -rectDim);
           break;
-        case 3:
+        case 2:
           // rotate 3/4
           p5.rotate(3 * p5.HALF_PI);
           p5.translate(-rectDim, 0);
           break;
-        case 4:
+        case 3:
           // rotate 4/4
           break;
       }
