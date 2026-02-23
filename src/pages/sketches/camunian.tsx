@@ -25,7 +25,6 @@ const sketch = (p5: p5) => {
       this.y = posY;
       this.t = randomBetween(4);
       this.r = randomBetween(3);
-      console.log(this.r);
       this.c = randomBetween(10);
     }
     draw() {
